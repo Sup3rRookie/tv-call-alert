@@ -1,0 +1,2 @@
+rootProject.name = 'tv-call-alert'
+include ':core', ':app'

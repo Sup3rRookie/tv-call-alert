@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; manifest-src 'self'; connect-src https://ntfy.sh; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Call home</title>
+  <meta name="description" content="One button that shows a call card on the family TV.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Call home">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <noscript>
+    <p class="notice">This page needs JavaScript to sign and send the call.</p>
+  </noscript>
+
+  <main id="view-pair" class="view" hidden>
+    <div class="pair">
+      <img class="pair-icon" src="icons/icon-180.png" width="72" height="72" alt="">
+      <h1>Pair with TV</h1>
+      <p class="lede">Type the pairing code shown on the TV. It starts with the slot number.</p>
+      <form id="pair-form" class="pair-form" novalidate>
+        <label class="visually-hidden" for="pair-code">Pairing code</label>
+        <input id="pair-code" class="pair-input" type="text" inputmode="text"
+               autocomplete="off" autocorrect="off" autocapitalize="characters"
+               spellcheck="false" maxlength="80" enterkeyhint="done"
+               placeholder="Pairing code"
+               aria-describedby="pair-error">
+        <p id="pair-error" class="pair-error" role="alert"></p>
+        <button id="pair-button" class="button button-primary" type="submit">Pair</button>
+      </form>
+      <p class="fine">The code is used once to create keys that stay on this phone. It is not saved or sent anywhere.</p>
+    </div>
+  </main>
+
+  <main id="view-main" class="view" hidden>
+    <header class="top">
+      <p id="presence" class="presence" role="status" aria-live="polite" data-tone="neutral">
+        <span class="presence-dot" aria-hidden="true"></span>
+        <span id="presence-text"></span>
+      </p>
+    </header>
+
+    <section class="stage" aria-label="Call">
+      <button id="call-button" class="call" type="button">
+        <span class="call-label">Call home</span>
+      </button>
+      <p id="status" class="status" role="status" aria-live="polite" data-tone="neutral"></p>
+      <div class="actions">
+        <a id="whatsapp-link" class="button button-secondary is-hidden" href="whatsapp://" rel="noreferrer">Open WhatsApp</a>
+        <button id="cancel-button" class="button button-quiet is-hidden" type="button" disabled>Cancel</button>
+      </div>
+    </section>
+
+    <footer class="bottom">
+      <span id="slot-label" class="fine"></span>
+      <button id="unpair-button" class="button button-link" type="button">Unpair</button>
+    </footer>
+  </main>
+
+  <dialog id="unpair-dialog" class="sheet" aria-labelledby="unpair-title" aria-describedby="unpair-text">
+    <h2 id="unpair-title">Unpair this phone?</h2>
+    <p id="unpair-text">The keys on this phone are deleted. To call home again you will need the pairing code from the TV.</p>
+    <div class="sheet-actions">
+      <button id="unpair-cancel" class="button button-secondary" type="button">Keep</button>
+      <button id="unpair-confirm" class="button button-danger" type="button">Unpair</button>
+    </div>
+  </dialog>
+</body>
+</html>

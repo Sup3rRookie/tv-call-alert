@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TV Call Alert</string>
+    <string name="a11y_label">TV Call Alert card</string>
+    <string name="a11y_description">Lets TV Call Alert draw the incoming call card on top of the show that is playing. It does not read the screen or any key presses.</string>
+
+    <string name="channel_name">Listening for calls</string>
+    <string name="notification_title">TV Call Alert is listening</string>
+
+    <string name="title">TV Call Alert</string>
+    <string name="status_relay_connected">Relay: connected</string>
+    <string name="status_relay_disconnected">Relay: not connected</string>
+    <string name="status_relay_unpaired">Relay: waiting, no phone is paired yet</string>
+    <string name="status_display_a11y">Card display: ready (accessibility service)</string>
+    <string name="status_display_overlay">Card display: ready (display over other apps)</string>
+    <string name="status_display_none">Card display: NOT READY. Turn on the accessibility service below.</string>
+    <string name="status_dropped">Messages ignored as invalid: %1$d</string>
+
+    <string name="slot_empty">Phone %1$d: not paired. Press OK to pair.</string>
+    <string name="slot_paired">Phone %1$d: %2$s. Press OK for options.</string>
+    <string name="btn_test">Show a test call</string>
+    <string name="btn_a11y">Open accessibility settings</string>
+    <string name="btn_overlay">Open \"display over other apps\" setting</string>
+    <string name="settings_missing">This TV has no screen for that setting. Use the adb command in the README instead.</string>
+    <string name="test_not_ready">Card display is not ready yet. Turn on the accessibility service first.</string>
+
+    <string name="dlg_name_title">Who calls from this phone?</string>
+    <string name="dlg_name_hint">Name shown on the TV</string>
+    <string name="dlg_code_title">Pairing code for %1$s</string>
+    <string name="dlg_code_body">Type this into the Call Home page on the phone:\n\n%1$s\n\nAnyone who has this code can show call cards on this TV, so do not share it.</string>
+    <string name="dlg_options_title">%1$s</string>
+    <string name="opt_show_code">Show pairing code</string>
+    <string name="opt_rename">Change name</string>
+    <string name="opt_remove">Remove this phone</string>
+    <string name="dlg_remove_title">Remove %1$s?</string>
+    <string name="dlg_remove_body">This phone will no longer be able to show call cards on this TV.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="remove">Remove</string>
+    <string name="default_name">Family</string>
+    <string name="test_name">Test</string>
+
+    <string name="card_tag">INCOMING CALL</string>
+    <string name="card_is_calling">IS CALLING!</string>
+    <string name="card_hint">Pick up the phone!   Press OK to close</string>
+</resources>

@@ -1,0 +1,35 @@
+# Gradle / Android
+.gradle/
+build/
+**/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.hprof
+# IDE
+.idea/
+*.iml
+.vscode/
+# Secrets and signing
+secrets.properties
+keystore.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+.env
+.env.*
+# Node / OS
+node_modules/
+coverage/
+Thumbs.db
+desktop.ini
+.DS_Store
+# keep the wrapper
+!gradle/wrapper/gradle-wrapper.jar
